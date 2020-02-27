@@ -2,26 +2,30 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.ageUp,
+.ageDown {
+  margin: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px
+}
+
+.age {
+  margin: 10px
+}
+
+.historyItem {
+    list-style-type: none;
+    border: 1px solid #f9e5ad;
+    margin: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #f7e8bc70
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .App-link {
