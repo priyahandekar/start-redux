@@ -5,9 +5,10 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
-// import reducer from './store/reducer';
-import reducerA from './store/reducerA';
-import reducerB from './store/reducerB';
+import reducer from './store/reducer';
+import thunk from "redux-thunk";
+// import reducerA from './store/reducerA';
+// import reducerB from './store/reducerB';
 
 const logAction = (store) => {
     return next => {
@@ -18,13 +19,13 @@ const logAction = (store) => {
     }
 }
 
-const rootReducer = combineReducers({
-    rA: reducerA,
-    rB: reducerB
-})
+// const rootReducer = combineReducers({
+//     rA: reducerA,
+//     rB: reducerB
+// })
 
-const store = createStore(rootReducer, applyMiddleware(logAction));
-
+//const store = createStore(rootReducer, applyMiddleware(logAction));
+const store = createStore(reducer, applyMiddleware(thunk));
 ReactDOM.render(<Provider store = {store}><App /></Provider> ,document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
